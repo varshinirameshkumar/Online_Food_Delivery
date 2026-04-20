@@ -1,53 +1,117 @@
+
+# QuickBite: Online Food Delivery Application
+
+**A Java Full Stack Hackathon Project** *Developed by Team QuickBite*
+
 ---
 
-### Project Documentation Overview
+## 📌 Project Overview
+QuickBite is a robust, scalable, and user-friendly food delivery platform designed to bridge the gap between customers, local restaurants, and delivery partners. This application provides a seamless ecosystem for ordering food, managing restaurant menus, and tracking deliveries in real-time.
 
-Below is the structured content contained within your README, which you can also copy directly into a `README.md` file in your GitHub repository:
+### 🎯 Key Objectives
+* **Scalability:** Built with Spring Boot and MongoDB to handle high transaction volumes.
+* **Security:** Role-based access control using JWT (JSON Web Tokens).
+* **User Experience:** Responsive and intuitive UI built with React.js.
 
-#### 🚀 Project Title: QuickBite
-**Hackathon Problem:** Online Food Delivery Application (Java Full Stack)
+---
 
-#### 1. Project Overview
-QuickBite is a robust, scalable, and user-centric food delivery platform designed to connect customers, local restaurants, and delivery partners. Developed during the 2026 Hackathon, the application utilizes a modern tech stack to ensure high performance, security, and a seamless user experience.
+## 🛠 Tech Stack
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend** | React.js, Tailwind CSS, Axios, Context API |
+| **Backend** | Java 17, Spring Boot, Spring Security |
+| **Database** | MongoDB (NoSQL) |
+| **Security** | JWT (JSON Web Token), BCrypt Encryption |
+| **Tools** | Git, Postman, Maven, VS Code / IntelliJ |
 
-#### 2. Tech Stack
-* **Frontend:** React.js, Tailwind CSS, Axios, React Router.
-* **Backend:** Java 17, Spring Boot, Spring Security (JWT).
-* **Database:** MongoDB (NoSQL) for high-speed data retrieval and flexibility.
-* **Tools:** Git, GitHub, Postman, VS Code.
+---
 
-#### 3. Core Team & Roles
-| Name | Role | Responsibilities |
+## 👥 Team Roles & Responsibilities
+| Name | Role | Primary Focus |
 | :--- | :--- | :--- |
-| **Srivarshini R** | **Team Lead** | Project Architecture, Documentation, Final Pitch, & Coordination. |
-| **Harshini K** | **Backend Lead** | Spring Boot REST APIs, MongoDB Schema, & Security. |
-| **Maheswari N** | **Frontend Lead** | UI/UX Design, React Components, & State Management. |
-| **Santhya S** | **Full Stack/QA** | API Integration, System Testing, & Bug Tracking. |
-| **Vaijayanthi R** | **Dev/DevOps** | Admin/Partner Dashboards, Version Control, & Deployment. |
+| **Srivarshini R** | **Team Leader** | Project Architecture, Documentation, Final Pitch, & Team Coordination. |
+| **Harshini K** | **Backend Developer** | Spring Boot API development, MongoDB Schema, & Payment Logic. |
+| **Maheswari N** | **Frontend Developer** | UI/UX Design, React Component Architecture, & Aesthetic Styling. |
+| **Santhya S** | **Full Stack Support** | Order Tracking Integration, End-to-End Testing, & QA Engineer. |
+| **Vaijayanthi R** | **FE Dev & DevOps** | User/Admin Dashboards, Version Control (Git), & Final Deployment. |
 
-#### 4. Implementation Details
-The project follows the **MVC (Model-View-Controller)** design pattern:
-1.  **Frontend (React):** Communicates with the backend using RESTful services. State is managed via Context API to ensure cart data and user sessions persist across views.
-2.  **Backend (Spring Boot):** Implements business logic across `Controller`, `Service`, and `Repository` layers.
-3.  **Security:** All endpoints are protected via **JWT (JSON Web Tokens)**. Users are assigned roles (Admin, Customer, Restaurant, Partner) which restrict their access to specific features.
-4.  **Database (MongoDB):** Utilizes non-relational document storage for flexible menu structures and rapid order logging.
+---
 
-#### 5. Features
-* **Multi-User Portal:** Custom dashboards for four different user roles.
-* **Menu Management:** Real-time CRUD operations for restaurant owners.
-* **Live Tracking:** A simulated real-time status bar for tracking food from preparation to doorstep.
-* **Payment Gateway:** Integrated mock payment system supporting UPI and Cards.
+## 🚀 Key Features
+### 1. User Management
+* **Secure Authentication:** Login/Signup with encrypted passwords.
+* **Role-Based Access:** Dynamic views for **Admin**, **Customer**, **Restaurant Owner**, and **Delivery Partner**.
 
-#### 6. Installation
-```bash
-# Clone the repository
-git clone https://github.com/your-repo/quickbite.git
+### 2. Ordering & Management
+* **Restaurant Portal:** Owners can manage digital menus (Add/Update/Delete items).
+* **Smart Cart:** Seamlessly add items, adjust quantities, and calculate totals.
+* **Order Tracking:** Real-time status updates: `Placed` ➔ `Preparing` ➔ `Out for Delivery` ➔ `Delivered`.
 
-# Backend Setup
-cd backend && mvn spring-boot:run
+### 3. Analytics & Admin Tools
+* **Admin Dashboard:** High-level view of total sales, active users, and platform performance.
+* **Reviews & Ratings:** Customer feedback loop for quality control.
 
-# Frontend Setup
-cd frontend && npm install && npm start
+---
+
+## 🏗 System Architecture
+The application follows a **Layered Architecture** pattern:
+1.  **Presentation Layer:** React.js components for a modern, single-page application experience.
+2.  **Service Layer:** Spring Boot handles business logic, order processing, and validation.
+3.  **Data Access Layer:** Spring Data MongoDB for high-performance NoSQL operations.
+4.  **Security Layer:** Interceptors to validate JWT tokens for protected API endpoints.
+
+---
+
+## 📂 Project Structure
+### Backend (Spring Boot)
+```text
+com.fooddelivery
+├── config          # Security & JWT configurations
+├── controller      # REST API Endpoints
+├── model           # MongoDB Document Entities
+├── repository      # Data Access Layer
+└── service         # Business Logic implementation
+```
+
+### Frontend (React)
+```text
+src/
+├── components      # Reusable UI elements (Navbar, Cards, Buttons)
+├── pages           # Main views (Home, Cart, Dashboard)
+├── services        # Axios API configurations
+└── context         # State management for User/Cart
 ```
 
 ---
+
+## 🔧 Installation & Setup
+
+### Prerequisites
+* JDK 17 or higher
+* Node.js & npm
+* MongoDB Atlas or local MongoDB Compass
+
+### 1. Backend Setup
+```bash
+# Navigate to backend directory
+cd backend-folder
+
+# Configure MongoDB URI in src/main/resources/application.properties
+spring.data.mongodb.uri=your_mongodb_connection_string
+
+# Run the application
+mvn spring-boot:run
+```
+
+### 2. Frontend Setup
+```bash
+# Navigate to frontend directory
+cd frontend-folder
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm start
+```
+
