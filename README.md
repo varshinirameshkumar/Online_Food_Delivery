@@ -118,5 +118,3 @@ npm install
 # Start the development server
 npm start
 ```
-
-**Note to Judges:** QuickBite isn't just about moving food; it's about moving the industry forward through social interaction and environmental responsibility.
